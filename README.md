@@ -17,4 +17,4 @@ Pull to Refresh;
 
 # Preview
 
-![Screenshot](gitFeed.gif)
+![Screenshot](gifFeed.gif)
