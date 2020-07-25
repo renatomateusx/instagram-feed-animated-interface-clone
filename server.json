@@ -5,7 +5,7 @@
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
       "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
       "aspectRatio": 0.834,
-      "description": "Working hard at Rocketseat!",
+      "description": "Working hard at React Native!",
       "authorId": 1
     },
     {
@@ -109,7 +109,7 @@
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
       "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
       "aspectRatio": 0.834,
-      "description": "Working hard at Rocketseat!",
+      "description": "Working hard at React Native!",
       "authorId": 4
     },
     {
@@ -164,27 +164,27 @@
   "authors": [
     {
       "id": 1,
-      "name": "dieegosf",
+      "name": "renatomoura",
       "avatar": "https://avatars0.githubusercontent.com/u/2254731?s=50&v=4"
     },
     {
       "id": 2,
-      "name": "cleitonsouza",
+      "name": "mateus_santos",
       "avatar": "https://avatars0.githubusercontent.com/u/4669899?s=50&v=4"
     },
     {
       "id": 3,
-      "name": "pellizzetti",
+      "name": "santos_moura",
       "avatar": "https://avatars2.githubusercontent.com/u/16545335?s=50&v=4"
     },
     {
       "id": 4,
-      "name": "jpdemagalhaes",
+      "name": "moura_renato",
       "avatar": "https://avatars3.githubusercontent.com/u/7268910?s=50&v=4"
     },
     {
       "id": 5,
-      "name": "jpedroschmitz",
+      "name": "mateus_renato",
       "avatar": "https://avatars0.githubusercontent.com/u/26466516?s=50&v=4"
     }
   ]

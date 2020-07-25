@@ -12,12 +12,12 @@ export default function Feed() {
     const [refreshing, setRefreshing] = useState(false);
 
     async function loadPage(pageNumber = page, shouldRefresh = false) {
-        if (pageNumber == total) return;
-
+        if (pageNumber === total) return;
         if (loading) return;
+
         setLoading(true);
 
-        const response = await fetch(`http://192.168.1.22:3000/feed?_expand=author&_limit=4&_page=${pageNumber}`);
+        const response = await fetch(`http://28b329b2ad42.ngrok.io/feed?_expand=author&_limit=4&_page=${pageNumber}`);
         const totalItems = await response.headers.get('X-Total-Count');
         const data = await response.json();
 
@@ -26,8 +26,6 @@ export default function Feed() {
         setPage(pageNumber + 1);
 
         setFeed(shouldRefresh ? data : [...feed, ...data]);
-
-
     }
 
     async function refreshList() {
@@ -42,7 +40,7 @@ export default function Feed() {
 
     const handleViewableChanged = useCallback(({ changed }) => {
         setViewable(changed.map(({ item }) => item.id));
-    });
+    },[]);
 
     return (
         <Container>
@@ -50,14 +48,14 @@ export default function Feed() {
                 key="list"
                 data={feed}
                 keyExtractor={item => String(item.id)}
-                // onViewableItemsChanged={handleViewableChanged}
+                onViewableItemsChanged={handleViewableChanged.current}
                 viewabilityConfig={{
                     viewAreaCoveragePercentThreshold: 10,
                 }}
                 showsVerticalScrollIndicator={false}
                 onRefresh={refreshList}
                 refreshing={refreshing}
-                onEndReachedThreshold={0.1} //Quando ler um percentual daquele componente (image, no caso) ele irá trocar o blur pela imagem carregada
+                onEndReachedThreshold={0.7} //Quando ler um percentual daquele componente (image, no caso) ele irá trocar o blur pela imagem carregada
                 onEndReached={() => loadPage()}
                 ListFooterComponent={loading && <Loading />}
                 renderItem={({ item }) => (
@@ -69,7 +67,7 @@ export default function Feed() {
 
                         <LazyImage
                             aspectRatio={item.aspectRatio}
-                            shouldLoad={viewable.includes(item.id)}
+                            shouldLoad={true}
                             smallSource={{ uri: item.small }}
                             source={{ uri: item.image }}
                         />
